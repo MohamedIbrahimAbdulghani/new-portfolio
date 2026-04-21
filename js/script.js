@@ -125,5 +125,5 @@ goTopBtn.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("demo-link-3")
-    ?.setAttribute("href", "https://job-app-master-lsol2u.free.laravel.cloud/");
+    ?.setAttribute("href", "https://job-app-master-h374ga.free.laravel.cloud/");
 });
