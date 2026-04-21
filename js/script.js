@@ -57,7 +57,7 @@ if (form) {
       });
       if (response.ok) {
         msgDiv.className =
-          "mt-4 p-3 rounded-xl text-center text-sm bg-green-100 text-green-800";
+          "p-3 mt-4 text-sm text-center text-green-800 bg-green-100 rounded-xl";
         msgDiv.innerHTML =
           '<i class="fas fa-check-circle"></i> Thanks! I\'ll reply soon.';
         form.reset();
@@ -66,7 +66,7 @@ if (form) {
       }
     } catch (error) {
       msgDiv.className =
-        "mt-4 p-3 rounded-xl text-center text-sm bg-red-100 text-red-700";
+        "p-3 mt-4 text-sm text-center text-red-700 bg-red-100 rounded-xl";
       msgDiv.innerHTML =
         '<i class="fas fa-exclamation-triangle"></i> Error. Please email me directly.';
     }
@@ -125,5 +125,5 @@ goTopBtn.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("demo-link-3")
-    ?.setAttribute("href", "https://job-app-master-jhjvtg.free.laravel.cloud/");
+    ?.setAttribute("href", "https://job-app-master-lsol2u.free.laravel.cloud/");
 });
