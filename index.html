@@ -3,543 +3,848 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Mohamed Ibrahim | Backend Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Ibrahim Abdulghani — Software Engineer · Laravel Backend Developer</title>
   <meta name="description"
-    content="Backend Software Engineer specializing in PHP, Laravel, and API development. View my portfolio of invoice systems, school management, and job platforms." />
+    content="Mohamed Ibrahim Abdulghani is a Software Engineer specialized in building reliable, maintainable, and scalable backend systems using PHP and Laravel." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="fixed top-0 z-50 w-full border-b shadow-md bg-white/90 backdrop-blur-md border-gray-200/50">
-    <div class="max-w-6xl px-4 mx-auto sm:px-5 lg:px-8">
-      <div class="flex items-center justify-between py-3 lg:py-4">
-        <div
-          class="text-xl font-extrabold text-transparent sm:text-2xl bg-gradient-to-r from-blue-800 to-indigo-700 bg-clip-text whitespace-nowrap">
-          Mohamed Ibrahim
+
+  <!-- Skip to content -->
+  <a href="#main-content" class="sr-only">Skip to content</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+
+        <!-- Brand (Ali Abdaal Style with Hand-Drawn Swoosh) -->
+        <a href="#home" class="nav__brand">
+          <span class="nav__brand-group">
+            <span class="nav__brand-name">
+              <span class="nav__brand-first">
+                <span data-i18n="nav.brand_first">Mohamed</span>
+                <svg class="nav__brand-swoosh" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path d="M4 14C34 5 72 6 96 13" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span class="nav__brand-last" data-i18n="nav.brand_last">Ibrahim</span>
+            </span>
+            <span class="nav__title" data-i18n="nav.brand_title">Backend Developer</span>
+          </span>
+        </a>
+
+        <!-- Desktop Links -->
+        <nav class="nav__links" aria-label="Main navigation">
+          <a href="#home" class="nav__link" data-i18n="nav.home">Home</a>
+          <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
+          <a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
+          <a href="#services" class="nav__link" data-i18n="nav.services">Services</a>
+          <a href="#projects" class="nav__link" data-i18n="nav.projects">Projects</a>
+          <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <!-- Controls & Pill CTA (Matching Ali's "Join 370k+ Subscribers") -->
+        <div class="nav__controls">
+          <a href="#contact" class="nav__cta-pill" data-i18n="nav.contact_cta">Get in Touch</a>
+
+          <!-- Language -->
+          <button id="lang-toggle" class="nav__lang-btn" aria-label="Toggle Language" type="button">
+            <span id="lang-text">عربي</span>
+          </button>
+
+          <!-- Theme -->
+          <button id="theme-toggle" class="nav__icon-btn" aria-label="Toggle Theme" type="button">
+            <span id="theme-icon" class="material-symbols-outlined">dark_mode</span>
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <button id="mobile-menu-btn" class="nav__icon-btn nav__mobile-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
         </div>
-        <div class="hidden space-x-6 font-medium md:flex lg:space-x-8">
-          <a href="#home" class="text-sm text-gray-700 transition nav-link hover:text-blue-700 lg:text-base">Home</a>
-          <a href="#about" class="text-sm text-gray-700 transition nav-link hover:text-blue-700 lg:text-base">About</a>
-          <a href="#skills"
-            class="text-sm text-gray-700 transition nav-link hover:text-blue-700 lg:text-base">Skills</a>
-          <a href="#services"
-            class="text-sm text-gray-700 transition nav-link hover:text-blue-700 lg:text-base">Services</a>
-          <a href="#projects"
-            class="text-sm text-gray-700 transition nav-link hover:text-blue-700 lg:text-base">Projects</a>
-          <a href="#contact"
-            class="text-sm text-gray-700 transition nav-link hover:text-blue-700 lg:text-base">Contact</a>
-        </div>
-        <button id="mobile-menu-btn" class="text-2xl text-gray-700 md:hidden">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <div id="mobile-menu" class="hidden pb-5 space-y-3 md:hidden">
-        <a href="#home" class="block py-2 text-gray-700 hover:text-blue-700">Home</a>
-        <a href="#about" class="block py-2 text-gray-700 hover:text-blue-700">About</a>
-        <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-700">Skills</a>
-        <a href="#services" class="block py-2 text-gray-700 hover:text-blue-700">Services</a>
-        <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-700">Projects</a>
-        <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-700">Contact</a>
       </div>
     </div>
-  </nav>
 
-  <section id="home" class="flex items-center justify-center min-h-screen pt-16 text-white gradient-bg">
-    <div class="max-w-4xl px-4 mx-auto text-center sm:px-6 fade-in-up">
-      <div class="relative w-32 h-32 mx-auto mb-6 sm:w-44 sm:h-44 sm:mb-7">
-        <div class="absolute inset-0 rounded-full bg-white/20 blur-md"></div>
-        <img src="img/IMG_20260331_180829_183.png" alt="Mohamed Ibrahim"
-          class="relative z-10 object-cover w-full h-full border-4 rounded-full shadow-2xl border-white/60" onerror="
-              this.src =
-                'https://ui-avatars.com/api/?name=Mohamed+Ibrahim&background=1e3a8a&color=fff&size=180'
-            " />
-      </div>
-      <h1 class="mb-3 text-3xl font-extrabold sm:text-4xl md:text-5xl lg:text-6xl sm:mb-4">
-        Mohamed <span class="text-yellow-300">Ibrahim</span>
-      </h1>
-      <p class="mb-2 text-lg font-semibold sm:text-xl md:text-2xl">
-        <i class="mr-2 fas fa-code"></i>Backend Software Engineer
-      </p>
-      <p class="px-2 mb-4 text-base text-blue-100 sm:text-lg">
-        I build scalable backends and RESTful APIs that businesses rely on.
-      </p>
-      <p class="max-w-2xl px-2 mx-auto text-sm leading-relaxed text-gray-200 sm:text-base md:text-lg">
-        PHP · Laravel · MySQL · API Design · System Architecture
-      </p>
-      <div class="flex flex-wrap justify-center gap-3 px-2 mt-8 sm:gap-4 sm:mt-10">
-        <a href="#projects"
-          class="flex items-center gap-2 px-5 py-2 text-sm font-bold text-blue-900 transition bg-white rounded-full shadow-lg sm:px-8 sm:py-3 hover:bg-gray-100 sm:text-base"><i
-            class="fas fa-arrow-right"></i> View Work</a>
-        <a href="#contact"
-          class="flex items-center gap-2 px-5 py-2 text-sm font-semibold transition border-2 border-white rounded-full sm:px-8 sm:py-3 hover:bg-white hover:text-blue-900 sm:text-base"><i
-            class="fas fa-paper-plane"></i> Hire Me</a>
-        <a href="upload/CV_New_Mohamed Ibrahim Abdulghani.pdf" target="_blank"
-          class="flex items-center gap-2 px-4 py-2 text-sm font-semibold transition border-2 rounded-full border-white/70 sm:px-6 sm:py-3 hover:bg-white hover:text-blue-900 sm:text-base"><i
-            class="fas fa-file-pdf"></i> View Resume</a>
-      </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="nav__mobile-menu">
+      <a href="#home" class="nav__mobile-link" data-i18n="nav.home">Home</a>
+      <a href="#about" class="nav__mobile-link" data-i18n="nav.about">About</a>
+      <a href="#skills" class="nav__mobile-link" data-i18n="nav.skills">Skills</a>
+      <a href="#services" class="nav__mobile-link" data-i18n="nav.services">Services</a>
+      <a href="#projects" class="nav__mobile-link" data-i18n="nav.projects">Projects</a>
+      <a href="#contact" class="nav__mobile-link" data-i18n="nav.contact">Contact</a>
+      <a href="#contact" class="nav__mobile-cta btn btn--ali-primary" data-i18n="nav.contact_cta">Get in Touch</a>
     </div>
-  </section>
+  </header>
 
-  <!-- About Section -->
-  <section id="about" class="py-16 bg-white sm:py-20 lg:py-24">
-    <div class="max-w-6xl px-4 mx-auto sm:px-5 lg:px-8">
-      <div class="mb-12 text-center sm:mb-16">
-        <span class="text-sm font-semibold tracking-wider text-blue-600 uppercase">Get To Know Me</span>
-        <h2 class="mt-2 text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl">
-          About Me
-        </h2>
-        <div class="w-16 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
-      </div>
 
-      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <h3 class="mb-4 text-2xl font-bold text-gray-800 sm:text-3xl">
-            I'm <span class="text-blue-600">Mohamed Ibrahim</span>
-          </h3>
-          <p class="mb-4 leading-relaxed text-gray-600">
-            A dedicated
-            <span class="font-semibold text-blue-600">PHP & Laravel developer</span>
-            with deep server-side experience. I design high-performance
-            databases, build secure RESTful APIs, and deliver robust
-            full-stack solutions.
+  <main id="main-content">
+
+    <!-- ===== HERO (Ali Abdaal Style) ===== -->
+    <section class="hero section" id="home">
+      <div class="container hero__container">
+
+        <!-- Left: Image Composition with Yellow Speech Bubble & Doodles -->
+        <div class="hero__visual reveal">
+          <div class="hero__bubble-wrap">
+
+            <!-- Slow Moving Dashed Frame around the Photo -->
+            <svg class="hero__dashed-ring" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <circle class="hero__dashed-circle" cx="200" cy="200" r="191" stroke="#F59E0B" stroke-width="2.5"
+                stroke-linecap="round" stroke-dasharray="10 14" opacity="0.85" />
+            </svg>
+
+
+            <!-- Mohamed's Profile Portrait -->
+            <div class="hero__photo-card">
+              <img src="img/IMG_20260331_180829_183.png" alt="Mohamed Ibrahim Abdulghani" class="hero__photo"
+                width="420" height="420" loading="eager" />
+            </div>
+
+
+          </div>
+        </div>
+
+        <!-- Right: Content & Typography -->
+        <div class="hero__content">
+
+          <!-- Availability Tag -->
+          <div class="hero__availability reveal">
+            <span class="hero__availability-dot"></span>
+            <span data-i18n="hero.availability">Available for full-time positions and contracts</span>
+          </div>
+
+          <!-- Main Greeting: "Hey Friends 👋" -->
+          <h1 class="hero__heading reveal reveal-delay-1">
+            <span class="hero__greeting-line">
+              <span class="hero__greeting-prefix" data-i18n="hero.heading_prefix">Hey, I'm</span>
+              <span class="hero__highlight-wrap">
+                <span class="hero__name" data-i18n="hero.title">Mohamed Ibrahim</span>
+                <!-- Sky Blue Hand-Drawn Underline Doodle -->
+                <svg class="hero__underline-svg" viewBox="0 0 200 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 4 13 C 55 4, 145 6, 196 12" stroke="#38BDF8" stroke-width="4.5" stroke-linecap="round" />
+                  <path d="M 16 19 C 70 12, 140 13, 188 17" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"
+                    opacity="0.85" />
+                </svg>
+              </span>
+              <span class="hero__wave" aria-hidden="true">👋</span>
+            </span>
+          </h1>
+
+          <!-- Subtitle & Tagline from old site -->
+          <p class="hero__role-badge reveal reveal-delay-2">
+            <i class="fas fa-code"></i>
+            <span data-i18n="hero.subtitle">Backend Software Engineer</span>
           </p>
-          <p class="mb-6 leading-relaxed text-gray-600">
-            Bachelor's in Computer Science from Cairo Higher Institute —
-            <span class="font-bold text-blue-700">A+ graduation project</span>.
+
+          <p class="hero__tagline reveal reveal-delay-2" data-i18n="hero.tagline">
+            I build scalable backend systems and RESTful APIs that businesses can rely on.
           </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="#projects"
-              class="flex items-center gap-2 px-6 py-2 text-white transition bg-blue-600 rounded-full hover:bg-blue-700">
-              <i class="fas fa-folder-open"></i> View Projects
+
+          <p class="hero__stack-pill reveal reveal-delay-2" data-i18n="hero.stack_pill">
+            PHP · Laravel · MySQL · API Design · System Architecture
+          </p>
+
+          <!-- Actions / CTAs (Ali Abdaal Warm Pill Buttons) -->
+          <div class="hero__actions reveal reveal-delay-2">
+            <a href="#projects" class="btn btn--ali-primary">
+              <span data-i18n="hero.cta_projects">View Projects</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
             </a>
-            <a href="#contact"
-              class="flex items-center gap-2 px-6 py-2 text-gray-700 transition border border-gray-300 rounded-full hover:border-blue-600 hover:text-blue-600">
-              <i class="fas fa-paper-plane"></i> Contact Me
+            <a href="#contact" class="btn btn--ali-secondary">
+              <span class="material-symbols-outlined">mail</span>
+              <span data-i18n="hero.cta_contact">Get in Touch</span>
+            </a>
+            <a href="upload/CV_New_Mohamed Ibrahim Abdulghani.pdf" target="_blank" class="btn btn--ali-outline">
+              <i class="fas fa-file-arrow-down"></i>
+              <span data-i18n="hero.cta_cv">Download CV</span>
             </a>
           </div>
+
+          <!-- Meta (GitHub, LinkedIn, Location) -->
+          <div class="hero__meta reveal reveal-delay-3">
+            <a href="https://github.com/MohamedIbrahimAbdulghani" target="_blank" rel="noopener noreferrer"
+              class="hero__meta-item hero__meta-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/mohamedibrahimabdulghani" target="_blank" rel="noopener noreferrer"
+              class="hero__meta-item hero__meta-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <span class="hero__meta-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span data-i18n="hero.location">Egypt · Open to Remote</span>
+            </span>
+          </div>
+
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-5 text-center transition bg-gray-50 rounded-xl hover:bg-blue-50 group">
-            <i class="mb-2 text-3xl text-blue-500 transition fas fa-graduation-cap group-hover:scale-110"></i>
-            <div class="text-2xl font-bold text-gray-800">A+</div>
-            <div class="text-sm text-gray-500">Graduation Project</div>
-          </div>
-          <div class="p-5 text-center transition bg-gray-50 rounded-xl hover:bg-emerald-50 group">
-            <i class="mb-2 text-3xl transition fas fa-briefcase text-emerald-500 group-hover:scale-110"></i>
-            <div class="text-2xl font-bold text-gray-800">1+ Year</div>
-            <div class="text-sm text-gray-500">Experience</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Decorative Bottom-Right Squiggle Doodle (matching screenshot) -->
+        <svg class="hero__bottom-doodle" viewBox="0 0 110 65" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M 8 48 C 25 15, 45 60, 72 24 C 88 4, 104 32, 102 52" stroke="#F48256" stroke-width="4.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
 
-  <!-- Skills Section -->
-  <section id="skills" class="py-16 sm:py-20 lg:py-24 bg-gray-50">
-    <div class="max-w-6xl px-4 mx-auto sm:px-5 lg:px-8">
-      <div class="mb-10 text-center sm:mb-14">
-        <h2 class="inline-block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl section-title">
-          Technical Skills
-        </h2>
       </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
-        <div class="p-5 bg-white shadow-lg rounded-2xl sm:p-7 card-hover">
-          <div class="mb-4 text-4xl sm:text-5xl sm:mb-5">
-            <i class="text-indigo-600 fab fa-php"></i>
-            <i class="text-red-500 fab fa-laravel"></i>
-          </div>
-          <h3 class="mb-3 text-lg font-bold sm:text-xl sm:mb-4">
-            PHP & Laravel
-          </h3>
-          <div class="space-y-3 sm:space-y-4">
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm">
-                <span>PHP (OOP)</span><span>95%</span>
-              </div>
-              <div class="bg-gray-200 rounded-full h-2 sm:h-2.5">
-                <div class="skill-bar bg-blue-600 h-2 sm:h-2.5 rounded-full" style="width: 95%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm">
-                <span>Laravel</span><span>90%</span>
-              </div>
-              <div class="bg-gray-200 rounded-full h-2 sm:h-2.5">
-                <div class="skill-bar bg-blue-600 h-2 sm:h-2.5 rounded-full" style="width: 90%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="p-5 bg-white shadow-lg rounded-2xl sm:p-7 card-hover">
-          <div class="mb-4 text-4xl sm:text-5xl sm:mb-5">
-            <i class="fas fa-database text-emerald-600"></i>
-            <i class="fas fa-plug"></i>
-          </div>
-          <h3 class="mb-3 text-lg font-bold sm:text-xl sm:mb-4">
-            Databases & APIs
-          </h3>
-          <div class="space-y-3 sm:space-y-4">
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm">
-                <span>MySQL</span><span>88%</span>
-              </div>
-              <div class="bg-gray-200 rounded-full h-2 sm:h-2.5">
-                <div class="skill-bar bg-green-600 h-2 sm:h-2.5 rounded-full" style="width: 88%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm">
-                <span>REST APIs</span><span>85%</span>
-              </div>
-              <div class="bg-gray-200 rounded-full h-2 sm:h-2.5">
-                <div class="skill-bar bg-green-600 h-2 sm:h-2.5 rounded-full" style="width: 85%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="p-5 bg-white shadow-lg rounded-2xl sm:p-7 card-hover">
-          <div class="mb-4 text-4xl sm:text-5xl sm:mb-5">
-            <i class="text-yellow-500 fab fa-js"></i>
-            <i class="fab fa-git-alt"></i>
-          </div>
-          <h3 class="mb-3 text-lg font-bold sm:text-xl sm:mb-4">
-            Frontend & Tools
-          </h3>
-          <div class="space-y-3 sm:space-y-4">
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm">
-                <span>JavaScript</span><span>82%</span>
-              </div>
-              <div class="bg-gray-200 rounded-full h-2 sm:h-2.5">
-                <div class="skill-bar bg-purple-600 h-2 sm:h-2.5 rounded-full" style="width: 82%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm">
-                <span>Git/GitHub</span><span>80%</span>
-              </div>
-              <div class="bg-gray-200 rounded-full h-2 sm:h-2.5">
-                <div class="skill-bar bg-purple-600 h-2 sm:h-2.5 rounded-full" style="width: 80%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-16 bg-white sm:py-20 lg:py-24">
-    <div class="max-w-6xl px-4 mx-auto sm:px-5 lg:px-8">
-      <div class="mb-10 text-center sm:mb-14">
-        <h2 class="inline-block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl section-title">
-          What I Offer
-        </h2>
-      </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
-        <div class="p-4 text-center sm:p-6 card-hover">
-          <div
-            class="flex items-center justify-center w-16 h-16 mx-auto mb-3 text-2xl text-blue-700 bg-blue-100 rounded-full sm:w-20 sm:h-20 sm:mb-4 sm:text-3xl">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3 class="mb-2 text-lg font-bold sm:text-xl">
-            Backend Development
-          </h3>
-          <p class="text-sm text-gray-500 sm:text-base">
-            Custom APIs, authentication systems, and scalable server-side
-            logic.
-          </p>
-        </div>
-        <div class="p-4 text-center sm:p-6 card-hover">
-          <div
-            class="flex items-center justify-center w-16 h-16 mx-auto mb-3 text-2xl rounded-full sm:w-20 sm:h-20 bg-emerald-100 sm:mb-4 sm:text-3xl text-emerald-700">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3 class="mb-2 text-lg font-bold sm:text-xl">
-            Laravel Optimization
-          </h3>
-          <p class="text-sm text-gray-500 sm:text-base">
-            Performance tuning, caching strategies, and queue management.
-          </p>
-        </div>
-        <div class="p-4 text-center sm:p-6 card-hover">
-          <div
-            class="flex items-center justify-center w-16 h-16 mx-auto mb-3 text-2xl text-purple-700 bg-purple-100 rounded-full sm:w-20 sm:h-20 sm:mb-4 sm:text-3xl">
-            <i class="fas fa-plug"></i>
-          </div>
-          <h3 class="mb-2 text-lg font-bold sm:text-xl">API Integration</h3>
-          <p class="text-sm text-gray-500 sm:text-base">
-            Payment gateways, SMS, Email, and third-party services.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-16 sm:py-20 lg:py-24 bg-gray-50">
-    <div class="max-w-6xl px-4 mx-auto sm:px-5 lg:px-8">
-      <div class="mb-10 text-center sm:mb-14">
-        <h2 class="inline-block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl section-title">
-          Featured Projects
-        </h2>
-        <p class="max-w-2xl px-2 mx-auto mt-4 text-sm text-gray-500 sm:mt-6 sm:text-base">
-          Real-world applications demonstrating backend expertise
-        </p>
-      </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
-        <!-- Project 1 - Invoice -->
-        <div class="overflow-hidden bg-white shadow-xl rounded-2xl card-hover">
-          <div class="flex items-center justify-center h-40 sm:h-48 bg-gradient-to-br from-emerald-500 to-teal-700">
-            <i class="text-5xl fas fa-file-invoice-dollar sm:text-7xl text-white/80"></i>
-          </div>
-          <div class="p-4 sm:p-6">
-            <div class="flex flex-col items-start justify-between gap-2 mb-2 sm:flex-row sm:items-center">
-              <h3 class="text-lg font-bold text-gray-800 sm:text-xl">
-                Invoice Management System
-              </h3>
-              <span class="px-2 py-1 text-xs text-green-700 bg-green-100 rounded-full whitespace-nowrap">Laravel
-                10</span>
-            </div>
-            <p class="mb-3 text-xs text-gray-500 sm:text-sm">
-              Complete invoicing solution with role-based access, payment
-              tracking, Excel/PDF export, and reporting dashboard.
+    <hr class="section-divider" />
+
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section section--alt" id="about">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <span class="section-label" data-i18n="about.label">Get To Know Me</span>
+          <h2 class="section-heading" data-i18n="about.heading">About Me</h2>
+          <div class="section-header-line"></div>
+        </div>
+
+        <div class="about__grid">
+          <!-- Left: Bio & CTAs -->
+          <div class="about__bio reveal">
+            <h3 class="about__title">
+              <span data-i18n="about.greeting">I'm</span> <span class="highlight-coral" data-i18n="about.name">Mohamed
+                Ibrahim</span>
+            </h3>
+            <p class="about__paragraph" data-i18n="about.p1">
+              A dedicated PHP &amp; Laravel developer with deep server-side experience. I design high-performance
+              databases, build secure RESTful APIs, and deliver robust full-stack solutions.
             </p>
-            <div class="flex flex-wrap gap-1 mb-3 sm:gap-2 sm:mb-4">
-              <span class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i
-                  class="mr-1 fab fa-laravel"></i>Laravel</span><span
-                class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i
-                  class="mr-1 fas fa-database"></i>MySQL</span><span
-                class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i
-                  class="mr-1 fas fa-file-excel"></i>Excel</span>
-            </div>
-            <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t">
-              <a href="https://github.com/MohamedIbrahimAbdulghani/invoice-system" target="_blank"
-                class="text-xs text-gray-600 hover:text-gray-900 sm:text-sm"><i class="fab fa-github"></i> Code</a><a
-                href="#" class="text-xs text-indigo-600 hover:text-indigo-800 sm:text-sm" id="demo-link-1"><i
-                  class="fas fa-external-link-alt"></i> Live Demo</a><button onclick="openCaseStudy('invoice')"
-                class="text-xs text-amber-600 hover:text-amber-700 sm:text-sm">
-                <i class="fas fa-chalkboard-user"></i> Case Study
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Project 2 - School -->
-        <div class="overflow-hidden bg-white shadow-xl rounded-2xl card-hover">
-          <div class="flex items-center justify-center h-40 sm:h-48 bg-gradient-to-br from-blue-500 to-indigo-700">
-            <i class="text-5xl fas fa-school sm:text-7xl text-white/80"></i>
-          </div>
-          <div class="p-4 sm:p-6">
-            <div class="flex flex-col items-start justify-between gap-2 mb-2 sm:flex-row sm:items-center">
-              <h3 class="text-lg font-bold text-gray-800 sm:text-xl">
-                School Management System
-              </h3>
-              <span class="px-2 py-1 text-xs text-blue-700 bg-blue-100 rounded-full whitespace-nowrap">Laravel +
-                Jetstream</span>
-            </div>
-            <p class="mb-3 text-xs text-gray-500 sm:text-sm">
-              Complete school platform with multi-role support, online exams,
-              fee tracking, library, and e-learning integration.
+            <p class="about__paragraph" data-i18n="about.p2">
+              Bachelor's in Computer Science from Cairo Higher Institute with an A+ graduation project grade. I
+              specialize in designing scalable systems that solve real business problems.
             </p>
-            <div class="flex flex-wrap gap-1 mb-3 sm:gap-2 sm:mb-4">
-              <span class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i
-                  class="mr-1 fab fa-laravel"></i>Laravel</span><span
-                class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i
-                  class="mr-1 fas fa-users"></i>Multi-Role</span><span
-                class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i
-                  class="mr-1 fas fa-file-alt"></i>Exams</span>
-            </div>
-            <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t">
-              <a href="https://github.com/MohamedIbrahimAbdulghani/school-system" target="_blank"
-                class="text-xs text-gray-600 hover:text-gray-900 sm:text-sm"><i class="fab fa-github"></i> Code</a><a
-                href="#" class="text-xs text-indigo-600 hover:text-indigo-800 sm:text-sm" id="demo-link-2"><i
-                  class="fas fa-external-link-alt"></i> Live Demo</a><button onclick="openCaseStudy('school')"
-                class="text-xs text-amber-600 hover:text-amber-700 sm:text-sm">
-                <i class="fas fa-chalkboard-user"></i> Case Study
-              </button>
+            <div class="about__actions">
+              <a href="#projects" class="btn btn--ali-primary">
+                <i class="fas fa-folder-open"></i>
+                <span data-i18n="about.cta_projects">View Projects</span>
+              </a>
+              <a href="#contact" class="btn btn--ali-outline">
+                <i class="fas fa-paper-plane"></i>
+                <span data-i18n="about.cta_contact">Contact Me</span>
+              </a>
             </div>
           </div>
-        </div>
-        <!-- Project 3 - Job -->
-        <div class="overflow-hidden bg-white shadow-xl rounded-2xl card-hover">
-          <div class="flex items-center justify-center h-40 sm:h-48 bg-gradient-to-br from-amber-500 to-orange-600">
-            <i class="text-5xl fas fa-briefcase sm:text-7xl text-white/80"></i>
-          </div>
-          <div class="p-4 sm:p-6">
-            <div class="flex flex-col items-start justify-between gap-2 mb-2 sm:flex-row sm:items-center">
-              <h3 class="text-lg font-bold text-gray-800 sm:text-xl">
-                Job Vacancies Platform
-              </h3>
-              <span class="px-2 py-1 text-xs rounded-full bg-amber-100 text-amber-700 whitespace-nowrap">Laravel +
-                AI</span>
-            </div>
-            <p class="mb-3 text-xs text-gray-500 sm:text-sm">
-              Job portal with resume analysis, AI-powered matching,
-              application tracking, and analytics dashboard.
-            </p>
-            <div class="flex flex-wrap gap-1 mb-3 sm:gap-2 sm:mb-4">
-              <span class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i
-                  class="mr-1 fab fa-laravel"></i>Laravel</span><span
-                class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i class="mr-1 fas fa-brain"></i>AI
-                Analysis</span><span class="px-2 py-1 text-xs rounded-full badge-tech sm:px-3"><i
-                  class="mr-1 fas fa-file-alt"></i>Resume Parser</span>
-            </div>
-            <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t">
-              <a href="https://github.com/MohamedIbrahimAbdulghani/Job_vacancies_platform" target="_blank"
-                class="text-xs text-gray-600 hover:text-gray-900 sm:text-sm"><i class="fab fa-github"></i> Code</a><a
-                href="#" target="_blank" class="text-xs text-indigo-600 hover:text-indigo-800 sm:text-sm"
-                id="demo-link-3"><i class="fas fa-external-link-alt"></i> Live Demo</a><button
-                onclick="openCaseStudy('job')" class="text-xs text-amber-600 hover:text-amber-700 sm:text-sm">
-                <i class="fas fa-chalkboard-user"></i> Case Study
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white border-b border-gray-200 sm:py-20 lg:py-24">
-    <div class="max-w-5xl px-4 mx-auto sm:px-5 lg:px-8">
-      <div class="mb-10 text-center sm:mb-14">
-        <h2 class="inline-block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl section-title">
-          Let's Work Together
-        </h2>
-      </div>
-      <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
-        <div class="order-2 p-5 bg-white shadow-md sm:p-7 rounded-2xl md:order-1">
-          <h3 class="mb-5 text-xl font-bold sm:text-2xl sm:mb-6">
-            <i class="text-blue-600 fas fa-address-card"></i> Contact Info
-          </h3>
-          <div class="space-y-4 sm:space-y-5">
-            <div class="flex items-center gap-3 sm:gap-4">
-              <div
-                class="flex items-center justify-center w-10 h-10 text-blue-600 bg-blue-100 rounded-full sm:w-11 sm:h-11">
-                <i class="fas fa-envelope"></i>
+          <!-- Right: The 2 Big Stat Cards from Old Site -->
+          <div class="about__stats-grid reveal reveal-delay-1">
+            <div class="about__stat-card">
+              <div class="about__stat-icon about__stat-icon--blue">
+                <i class="fas fa-graduation-cap"></i>
               </div>
-              <div>
-                <div class="text-sm font-semibold sm:text-base">Email</div>
-                <a href="mailto:devmohamed200@gmail.com"
-                  class="text-xs text-gray-600 break-all hover:text-blue-600 sm:text-sm">devmohamed200@gmail.com</a>
-              </div>
+              <div class="about__stat-value" data-i18n="about.stat_grad_value">A+</div>
+              <div class="about__stat-label" data-i18n="about.stat_grad_label">Graduation Project</div>
             </div>
-            <div class="flex items-center gap-3 sm:gap-4">
-              <div
-                class="flex items-center justify-center w-10 h-10 text-blue-600 bg-blue-100 rounded-full sm:w-11 sm:h-11">
-                <i class="fas fa-phone-alt"></i>
+
+            <div class="about__stat-card">
+              <div class="about__stat-icon about__stat-icon--emerald">
+                <i class="fas fa-briefcase"></i>
               </div>
-              <div>
-                <div class="text-sm font-semibold sm:text-base">Phone</div>
-                <div class="text-sm text-gray-600 sm:text-base">
-                  +20 120 548 1045
+              <div class="about__stat-value" data-i18n="about.stat_exp_value">1+ Year</div>
+              <div class="about__stat-label" data-i18n="about.stat_exp_label">Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== SKILLS (3 Cards with Progress Bars like Old Site) ===== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <span class="section-label" data-i18n="skills.label">Technical Skills</span>
+          <h2 class="section-heading" data-i18n="skills.heading">Technical Skills</h2>
+          <div class="section-header-line"></div>
+        </div>
+
+        <div class="skills__cards-grid">
+
+          <!-- Skill Card 1: PHP & Laravel -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icons">
+              <i class="fab fa-php skill-card__brand-icon skill-card__brand-icon--indigo"></i>
+              <i class="fab fa-laravel skill-card__brand-icon skill-card__brand-icon--red"></i>
+            </div>
+            <h3 class="skill-card__title" data-i18n="skills.cat_backend">PHP &amp; Laravel</h3>
+
+            <div class="skill-card__bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-item__header">
+                  <span class="skill-bar-item__name" data-i18n="skills.php_oop">PHP (OOP)</span>
+                  <span class="skill-bar-item__pct">95%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill skill-bar-fill--blue" style="width: 95%;"></div>
                 </div>
               </div>
-            </div>
-            <div class="flex items-center gap-3 sm:gap-4">
-              <div
-                class="flex items-center justify-center w-10 h-10 text-blue-600 bg-blue-100 rounded-full sm:w-11 sm:h-11">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div>
-                <div class="text-sm font-semibold sm:text-base">Location</div>
-                <div class="text-sm text-gray-600 sm:text-base">
-                  Zagazig, Egypt
+
+              <div class="skill-bar-item">
+                <div class="skill-bar-item__header">
+                  <span class="skill-bar-item__name" data-i18n="skills.laravel">Laravel</span>
+                  <span class="skill-bar-item__pct">90%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill skill-bar-fill--blue" style="width: 90%;"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="flex gap-3 mt-6 sm:mt-8 sm:gap-4">
-            <a href="https://linkedin.com/in/mohamedibrahimabdulghani" target="_blank"
-              class="flex items-center justify-center text-white bg-blue-700 rounded-full w-9 h-9 sm:w-10 sm:h-10 hover:bg-blue-800"><i
-                class="text-sm fab fa-linkedin-in sm:text-base"></i></a><a
-              href="https://github.com/MohamedIbrahimAbdulghani" target="_blank"
-              class="flex items-center justify-center text-white bg-gray-800 rounded-full w-9 h-9 sm:w-10 sm:h-10 hover:bg-gray-900"><i
-                class="text-sm fab fa-github sm:text-base"></i></a>
+
+          <!-- Skill Card 2: Databases & APIs -->
+          <div class="skill-card reveal reveal-delay-1">
+            <div class="skill-card__icons">
+              <i class="fas fa-database skill-card__brand-icon skill-card__brand-icon--emerald"></i>
+              <i class="fas fa-plug skill-card__brand-icon skill-card__brand-icon--blue"></i>
+            </div>
+            <h3 class="skill-card__title" data-i18n="skills.cat_databases">Databases &amp; APIs</h3>
+
+            <div class="skill-card__bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-item__header">
+                  <span class="skill-bar-item__name" data-i18n="skills.mysql">MySQL</span>
+                  <span class="skill-bar-item__pct">88%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill skill-bar-fill--emerald" style="width: 88%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-bar-item__header">
+                  <span class="skill-bar-item__name" data-i18n="skills.apis">REST APIs</span>
+                  <span class="skill-bar-item__pct">85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill skill-bar-fill--emerald" style="width: 85%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: Frontend & Tools -->
+          <div class="skill-card reveal reveal-delay-2">
+            <div class="skill-card__icons">
+              <i class="fab fa-js skill-card__brand-icon skill-card__brand-icon--yellow"></i>
+              <i class="fab fa-git-alt skill-card__brand-icon skill-card__brand-icon--coral"></i>
+            </div>
+            <h3 class="skill-card__title" data-i18n="skills.cat_frontend">Frontend &amp; Tools</h3>
+
+            <div class="skill-card__bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-item__header">
+                  <span class="skill-bar-item__name" data-i18n="skills.javascript">JavaScript</span>
+                  <span class="skill-bar-item__pct">82%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill skill-bar-fill--purple" style="width: 82%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-bar-item__header">
+                  <span class="skill-bar-item__name" data-i18n="skills.git">Git / GitHub</span>
+                  <span class="skill-bar-item__pct">80%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill skill-bar-fill--purple" style="width: 80%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <span class="section-label" data-i18n="services.label">Services</span>
+          <h2 class="section-heading" data-i18n="services.heading">What I Offer</h2>
+          <div class="section-header-line"></div>
+        </div>
+
+        <div class="services__grid">
+          <!-- Service 1: Backend Development -->
+          <div class="service-card reveal">
+            <div class="service-card__icon-wrap">
+              <i class="fas fa-server service-card__fa-icon"></i>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.s1_title">Backend Development</h3>
+            <p class="service-card__desc" data-i18n="services.s1_desc">Custom APIs, authentication systems, and scalable
+              server-side logic using PHP 8 &amp; Laravel.</p>
+          </div>
+
+          <!-- Service 2: Laravel Optimization -->
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-card__icon-wrap service-card__icon-wrap--emerald">
+              <i class="fas fa-rocket service-card__fa-icon"></i>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.s2_title">Laravel Optimization</h3>
+            <p class="service-card__desc" data-i18n="services.s2_desc">Performance tuning, caching strategies with
+              Redis, eager loading, and queue management.</p>
+          </div>
+
+          <!-- Service 3: API Integration -->
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-card__icon-wrap service-card__icon-wrap--purple">
+              <i class="fas fa-plug service-card__fa-icon"></i>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.s3_title">API Integration</h3>
+            <p class="service-card__desc" data-i18n="services.s3_desc">Payment gateways (Paymob, Stripe), SMS, Email
+              webhooks, and third-party automated exports.</p>
           </div>
         </div>
-        <div class="order-1 p-5 bg-white shadow-md rounded-2xl sm:p-7 md:order-2">
-          <form id="contact-form" action="https://formspree.io/f/xeaqkpdl" method="POST">
-            <div class="space-y-4 sm:space-y-5">
-              <input type="text" name="name" placeholder="Your Name" required
-                class="w-full px-4 py-2 text-sm border sm:py-3 rounded-xl sm:text-base" /><input type="email"
-                name="email" placeholder="Email" required
-                class="w-full px-4 py-2 text-sm border sm:py-3 rounded-xl sm:text-base" /><input type="text"
-                name="subject" placeholder="Subject" required
-                class="w-full px-4 py-2 text-sm border sm:py-3 rounded-xl sm:text-base" /><textarea name="message"
-                rows="4" placeholder="Message" required
-                class="w-full px-4 py-2 text-sm border sm:py-3 rounded-xl sm:text-base"></textarea><button type="submit"
-                class="w-full py-2 text-sm font-semibold text-white bg-blue-700 sm:py-3 rounded-xl hover:bg-blue-800 sm:text-base">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== PROJECTS (3-Column Grid with Colorful Banner Headers like Old Site) ===== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <span class="section-label" data-i18n="projects.label">Featured Projects</span>
+          <h2 class="section-heading" data-i18n="projects.heading">Featured Projects</h2>
+          <p class="section-desc" data-i18n="projects.desc">Real-world applications demonstrating backend expertise</p>
+          <div class="section-header-line"></div>
+        </div>
+
+        <div class="projects__cards-grid">
+
+          <!-- Project 1: Invoice System -->
+          <div class="project-box reveal">
+            <!-- Colorful Top Banner Header -->
+            <div class="project-box__banner project-box__banner--teal">
+              <i class="fas fa-file-invoice-dollar project-box__banner-icon"></i>
             </div>
+
+            <div class="project-box__body">
+              <div class="project-box__meta-top">
+                <h3 class="project-box__title" data-i18n="projects.p1_title">Invoice Management System</h3>
+                <span class="project-box__badge project-box__badge--green" data-i18n="projects.p1_badge">Laravel
+                  10</span>
+              </div>
+
+              <p class="project-box__desc" data-i18n="projects.p1_desc">
+                Complete invoicing solution with role-based access, payment tracking, Excel/PDF export, and reporting
+                dashboard.
+              </p>
+
+              <div class="project-box__tags">
+                <span class="project-box__tag"><i class="fab fa-laravel"></i> Laravel 10</span>
+                <span class="project-box__tag"><i class="fas fa-database"></i> MySQL</span>
+                <span class="project-box__tag"><i class="fas fa-file-excel"></i> Excel</span>
+                <span class="project-box__tag"><i class="fas fa-file-pdf"></i> DomPDF</span>
+              </div>
+
+              <div class="project-box__actions">
+                <a href="https://github.com/MohamedIbrahimAbdulghani/invoice-system" target="_blank"
+                  rel="noopener noreferrer" class="project-box__btn project-box__btn--code">
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.view_code">Code</span>
+                </a>
+                <button type="button" class="project-box__btn project-box__btn--case"
+                  onclick="openCaseStudy('invoice')">
+                  <i class="fas fa-chalkboard-user"></i>
+                  <span data-i18n="projects.case_study">Case Study</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: School System -->
+          <div class="project-box reveal reveal-delay-1">
+            <!-- Colorful Top Banner Header -->
+            <div class="project-box__banner project-box__banner--blue">
+              <i class="fas fa-school project-box__banner-icon"></i>
+            </div>
+
+            <div class="project-box__body">
+              <div class="project-box__meta-top">
+                <h3 class="project-box__title" data-i18n="projects.p2_title">School Management System</h3>
+                <span class="project-box__badge project-box__badge--blue" data-i18n="projects.p2_badge">Laravel +
+                  Jetstream</span>
+              </div>
+
+              <p class="project-box__desc" data-i18n="projects.p2_desc">
+                Complete school platform with multi-role support, online exams, fee tracking, library, and e-learning
+                integration.
+              </p>
+
+              <div class="project-box__tags">
+                <span class="project-box__tag"><i class="fab fa-laravel"></i> Laravel</span>
+                <span class="project-box__tag"><i class="fas fa-users"></i> Multi-Role</span>
+                <span class="project-box__tag"><i class="fas fa-file-alt"></i> Exams</span>
+                <span class="project-box__tag"><i class="fas fa-database"></i> MySQL</span>
+              </div>
+
+              <div class="project-box__actions">
+                <a href="https://github.com/MohamedIbrahimAbdulghani/school-system" target="_blank"
+                  rel="noopener noreferrer" class="project-box__btn project-box__btn--code">
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.view_code">Code</span>
+                </a>
+                <button type="button" class="project-box__btn project-box__btn--case" onclick="openCaseStudy('school')">
+                  <i class="fas fa-chalkboard-user"></i>
+                  <span data-i18n="projects.case_study">Case Study</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Job Vacancies Platform -->
+          <div class="project-box reveal reveal-delay-2">
+            <!-- Colorful Top Banner Header -->
+            <div class="project-box__banner project-box__banner--amber">
+              <i class="fas fa-briefcase project-box__banner-icon"></i>
+            </div>
+
+            <div class="project-box__body">
+              <div class="project-box__meta-top">
+                <h3 class="project-box__title" data-i18n="projects.p3_title">Job Vacancies Platform</h3>
+                <span class="project-box__badge project-box__badge--amber" data-i18n="projects.p3_badge">Laravel +
+                  AI</span>
+              </div>
+
+              <p class="project-box__desc" data-i18n="projects.p3_desc">
+                Job portal with resume analysis, AI-powered matching, application tracking, and analytics dashboard.
+              </p>
+
+              <div class="project-box__tags">
+                <span class="project-box__tag"><i class="fab fa-laravel"></i> Laravel</span>
+                <span class="project-box__tag"><i class="fas fa-brain"></i> AI Analysis</span>
+                <span class="project-box__tag"><i class="fas fa-file-alt"></i> Resume Parser</span>
+                <span class="project-box__tag"><i class="fas fa-bolt"></i> Redis</span>
+              </div>
+
+              <div class="project-box__actions">
+                <a href="https://job-app-master-h374ga.free.laravel.cloud/" target="_blank" rel="noopener noreferrer"
+                  class="project-box__btn project-box__btn--demo">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="projects.live_demo">Live Demo</span>
+                </a>
+                <a href="https://github.com/MohamedIbrahimAbdulghani/Job_vacancies_platform" target="_blank"
+                  rel="noopener noreferrer" class="project-box__btn project-box__btn--code">
+                  <i class="fab fa-github"></i>
+                  <span data-i18n="projects.view_code">Code</span>
+                </a>
+                <button type="button" class="project-box__btn project-box__btn--case" onclick="openCaseStudy('job')">
+                  <i class="fas fa-chalkboard-user"></i>
+                  <span data-i18n="projects.case_study">Case Study</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <hr class="section-divider" />
+
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <span class="section-label" data-i18n="contact.label">Contact</span>
+          <h2 class="section-heading" data-i18n="contact.heading">Let's work together</h2>
+          <div class="section-header-line"></div>
+          <p class="section-desc" data-i18n="contact.desc">
+            I'm available for full-time backend positions and freelance projects. Reach out through whichever channel works best for you.
+          </p>
+        </div>
+
+        <div class="contact__grid">
+
+          <!-- Contact Channels -->
+          <div class="reveal">
+            <div class="contact__channels">
+
+              <!-- Email -->
+              <div class="contact__channel">
+                <div class="contact__channel-info">
+                  <div class="contact__channel-icon">
+                    <span class="material-symbols-outlined">mail</span>
+                  </div>
+                  <div>
+                    <div class="contact__channel-label" data-i18n="contact.email_label">Email</div>
+                    <div class="contact__channel-value">devmohamed200@gmail.com</div>
+                  </div>
+                </div>
+                <button onclick="copyEmail()" id="copy-email-btn" class="contact__channel-action"
+                  data-i18n="contact.copy">Copy</button>
+              </div>
+
+              <!-- Phone / WhatsApp -->
+              <div class="contact__channel">
+                <div class="contact__channel-info">
+                  <div class="contact__channel-icon">
+                    <span class="material-symbols-outlined">call</span>
+                  </div>
+                  <div>
+                    <div class="contact__channel-label" data-i18n="contact.phone_label">Phone / WhatsApp</div>
+                    <a href="tel:+201205481045" class="contact__channel-value">+20 120 548 1045</a>
+                  </div>
+                </div>
+                <a href="https://wa.me/201205481045" target="_blank" rel="noopener noreferrer"
+                  class="contact__channel-action" data-i18n="contact.whatsapp">WhatsApp</a>
+              </div>
+
+              <!-- Location -->
+              <div class="contact__channel">
+                <div class="contact__channel-info">
+                  <div class="contact__channel-icon">
+                    <span class="material-symbols-outlined">location_on</span>
+                  </div>
+                  <div>
+                    <div class="contact__channel-label" data-i18n="contact.location_label">Location</div>
+                    <div class="contact__channel-value" data-i18n="contact.location_value">Zagazig / Cairo, Egypt · Open
+                      to Remote</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="contact__channel">
+                <div class="contact__channel-info">
+                  <div class="contact__channel-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </div>
+                  <div>
+                    <div class="contact__channel-label">LinkedIn</div>
+                    <div class="contact__channel-value">Mohamed Ibrahim</div>
+                  </div>
+                </div>
+                <a href="https://linkedin.com/in/mohamedibrahimabdulghani" target="_blank" rel="noopener noreferrer"
+                  class="contact__channel-action" data-i18n="contact.view_profile">View Profile</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form id="contact-form" action="https://formspree.io/f/xeaqkpdl" method="POST"
+            class="contact__form reveal reveal-delay-1">
+
+            <div class="contact__form-header">
+              <h3 class="contact__form-title" data-i18n="contact.form_title">Send a Message</h3>
+              <p class="contact__form-sub" data-i18n="contact.form_sub">I'll get back to you within 24 hours.</p>
+            </div>
+
+            <!-- Project Scope -->
+            <div class="form-group">
+              <span class="form-label" data-i18n="contact.scope_label">Project Type</span>
+              <div class="form-radio-group">
+                <label class="form-radio-label">
+                  <input type="radio" name="project_scope" value="Full-Time Role" checked />
+                  <span data-i18n="contact.scope_fulltime">Full-Time</span>
+                </label>
+                <label class="form-radio-label">
+                  <input type="radio" name="project_scope" value="Freelance Project" />
+                  <span data-i18n="contact.scope_freelance">Freelance</span>
+                </label>
+                <label class="form-radio-label">
+                  <input type="radio" name="project_scope" value="Consulting" />
+                  <span data-i18n="contact.scope_consulting">Consulting</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" class="form-label" data-i18n="contact.name_label">Name</label>
+                <input type="text" id="contact-name" name="name" required class="form-input"
+                  data-i18n-ph="contact.name_ph" placeholder="Your full name" />
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label" data-i18n="contact.email_input_label">Email</label>
+                <input type="email" id="contact-email" name="email" required class="form-input"
+                  placeholder="name@company.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label" data-i18n="contact.subject_label">Subject</label>
+              <input type="text" id="contact-subject" name="subject" required class="form-input"
+                data-i18n-ph="contact.subject_ph" placeholder="e.g. Laravel API for E-Commerce Platform" />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label" data-i18n="contact.message_label">Message</label>
+              <textarea id="contact-message" name="message" rows="4" required class="form-input"
+                data-i18n-ph="contact.message_ph" placeholder="Tell me about your project or opportunity..."></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn btn--primary btn--full">
+              <span class="material-symbols-outlined">send</span>
+              <span data-i18n="contact.send_btn">Send Message</span>
+            </button>
+
+            <div id="form-feedback" class="form-feedback"></div>
           </form>
-          <div id="form-message" class="hidden p-3 mt-4 text-sm text-center rounded-xl"></div>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-8 text-gray-400 bg-gray-900 sm:py-10">
-    <div class="max-w-6xl px-4 mx-auto text-center sm:px-5">
-      <div class="flex flex-wrap justify-center gap-4 mb-4 sm:gap-6">
-        <a href="#home" class="text-xs transition hover:text-white sm:text-sm">Home</a>
-        <a href="#about" class="text-xs transition hover:text-white sm:text-sm">About</a>
-        <a href="#projects" class="text-xs transition hover:text-white sm:text-sm">Projects</a>
-        <a href="#contact" class="text-xs transition hover:text-white sm:text-sm">Contact</a>
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#home" class="footer__brand-logo" aria-label="Mohamed Ibrahim">
+            <span class="footer__brand-first" data-i18n="nav.brand_first">Mohamed</span>
+            <span class="footer__brand-last" data-i18n="nav.brand_last">Ibrahim</span>
+            <span class="footer__brand-dot">.</span>
+          </a>
+          <p class="footer__brand-tagline" data-i18n="footer.tagline">Backend Software Engineer · Scalable Systems &amp;
+            REST APIs</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#home" class="footer__nav-link" data-i18n="footer.home">Home</a>
+          <a href="#about" class="footer__nav-link" data-i18n="footer.about">About</a>
+          <a href="#skills" class="footer__nav-link" data-i18n="footer.skills">Skills</a>
+          <a href="#services" class="footer__nav-link" data-i18n="footer.services">Services</a>
+          <a href="#projects" class="footer__nav-link" data-i18n="footer.projects">Projects</a>
+          <a href="#contact" class="footer__nav-link" data-i18n="footer.contact">Contact</a>
+        </nav>
       </div>
-      <div class="flex justify-center gap-4 mb-4 sm:gap-5">
-        <a href="https://linkedin.com/in/mohamedibrahimabdulghani" target="_blank"
-          class="text-lg transition hover:text-white sm:text-xl"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/MohamedIbrahimAbdulghani" target="_blank"
-          class="text-lg transition hover:text-white sm:text-xl"><i class="fab fa-github"></i></a>
-        <a href="#" class="text-lg transition hover:text-white sm:text-xl"><i class="fab fa-twitter"></i></a>
+
+      <div class="footer__divider"></div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright" data-i18n="footer.copyright">
+          © 2025 Mohamed Ibrahim Abdulghani — Backend Software Engineer. All rights reserved.
+        </p>
+
+        <div class="footer__socials">
+          <a href="https://linkedin.com/in/mohamedibrahimabdulghani" target="_blank" rel="noopener noreferrer"
+            class="footer__social-btn" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/MohamedIbrahimAbdulghani" target="_blank" rel="noopener noreferrer"
+            class="footer__social-btn" aria-label="GitHub" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://wa.me/201205481045" target="_blank" rel="noopener noreferrer" class="footer__social-btn"
+            aria-label="WhatsApp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:devmohamed200@gmail.com" class="footer__social-btn" aria-label="Email" title="Email">
+            <span class="material-symbols-outlined">mail</span>
+          </a>
+        </div>
       </div>
-      <p class="text-xs sm:text-sm">
-        © 2025 Mohamed Ibrahim Abdulghani — Backend Software Engineer. All
-        rights reserved.
-      </p>
     </div>
   </footer>
 
-  <!-- Go to Top Button -->
-  <div class="go-top-btn" id="goTopBtn">
-    <i class="fas fa-arrow-up"></i>
-  </div>
+  <!-- ===== CASE STUDY MODAL ===== -->
+  <div id="case-modal" class="case-modal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="modal-title">
+    <div class="case-modal__overlay" onclick="closeCaseStudy()"></div>
+    <div class="case-modal__dialog">
+      <button type="button" class="case-modal__close" onclick="closeCaseStudy()" aria-label="Close modal">
+        <span class="material-symbols-outlined">close</span>
+      </button>
 
-  <!-- Case Study Modal -->
-  <div id="case-modal"
-    class="fixed inset-0 z-50 items-center justify-center hidden p-3 bg-black/60 backdrop-blur-sm sm:p-4"
-    onclick="closeCaseStudyOnOutside(event)">
-    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-hidden shadow-2xl mx-2 sm:mx-0"
-      onclick="event.stopPropagation()">
-      <div class="flex items-center justify-between p-4 border-b sm:p-5">
-        <h3 id="case-title" class="text-xl font-bold text-gray-800 sm:text-2xl">
-          Case Study
-        </h3>
-        <button onclick="closeCaseStudy()" class="text-2xl text-gray-500 sm:text-3xl hover:text-gray-800">
-          &times;
-        </button>
+      <div class="case-modal__header">
+        <span id="modal-category" class="section-label">Case Study</span>
+        <h3 id="modal-title" class="case-modal__title">Project Title</h3>
       </div>
-      <div id="case-content" class="p-4 sm:p-6 overflow-y-auto max-h-[60vh] space-y-3 sm:space-y-4"></div>
-      <div class="flex justify-end p-4 sm:p-5 bg-gray-50">
-        <button onclick="closeCaseStudy()"
-          class="bg-gray-700 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-xl hover:bg-gray-800 text-sm sm:text-base">
-          Close
-        </button>
+
+      <div class="case-modal__body">
+        <!-- Challenge -->
+        <div class="case-modal__section case-modal__section--challenge">
+          <div class="case-modal__section-header">
+            <span class="material-symbols-outlined case-modal__section-icon">warning</span>
+            <h4 class="case-modal__section-title" id="modal-challenge-heading">The Challenge</h4>
+          </div>
+          <p id="modal-challenge" class="case-modal__section-text"></p>
+        </div>
+
+        <!-- Solution -->
+        <div class="case-modal__section case-modal__section--solution">
+          <div class="case-modal__section-header">
+            <span class="material-symbols-outlined case-modal__section-icon">psychology</span>
+            <h4 class="case-modal__section-title" id="modal-solution-heading">The Solution</h4>
+          </div>
+          <p id="modal-solution" class="case-modal__section-text"></p>
+        </div>
+
+        <!-- Result -->
+        <div class="case-modal__section case-modal__section--result">
+          <div class="case-modal__section-header">
+            <span class="material-symbols-outlined case-modal__section-icon">verified</span>
+            <h4 class="case-modal__section-title" id="modal-result-heading">Key Results &amp; Impact</h4>
+          </div>
+          <p id="modal-result" class="case-modal__section-text"></p>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="case-modal__stack-wrap">
+          <h4 class="case-modal__stack-heading" id="modal-stack-heading">Technologies Used</h4>
+          <div id="modal-stack" class="case-modal__stack-tags"></div>
+        </div>
+      </div>
+
+      <div class="case-modal__footer">
+        <a id="modal-demo-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--ali-primary"
+          style="display: none;">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+          <span id="modal-demo-text">Live Demo</span>
+        </a>
+        <a id="modal-code-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--ali-outline">
+          <i class="fab fa-github"></i>
+          <span id="modal-code-text">View Source Code</span>
+        </a>
       </div>
     </div>
   </div>
 
+  <!-- ===== GO TO TOP BUTTON ===== -->
+  <button id="goTopBtn" class="go-top-btn" type="button" aria-label="Go to top"
+    onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </button>
+
+  <script src="translate/en/english.js"></script>
+  <script src="translate/ar/arabic.js"></script>
   <script src="js/script.js"></script>
 </body>
 
